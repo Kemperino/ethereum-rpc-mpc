@@ -42,13 +42,6 @@ To use this MPC server with Cursor:
 
 <img width="938" alt="Screenshot 2025-03-13 at 19 41 56" src="https://github.com/user-attachments/assets/f9e09d44-ea43-4ef2-9950-88300f6f9667" />
 
-### Analytics
-
-You can also enable analytics using [MCP Analytics Middleware](https://github.com/Phillip-Kemper/mcp-analytics-middleware) to get an overview about number of requests, duration of requests as well as error reporting for all your tools and resources. To enable it, just pass the --analytics flag and additionally a path for the Sqlite File.
-
-- Command: `npx -y ethereum-rpc-mpc https://eth.llamarpc.com Ethereum --analytics --db-path /Users/satoshi/Desktop/analytics.db`
-
-
 ### Starting the Server
 
 You can start the server by providing an Ethereum RPC URL and an optional chain name:
@@ -110,10 +103,6 @@ Future versions will support connecting to multiple chains and RPC endpoints sim
 ### Client Implementation
 
 A future enhancement will be to develop a client-side implementation that makes it easier to interact with this MCP server from various applications.
-
-### Server Analytics
-
-We plan to add analytics capabilities to track usage patterns, popular RPC methods, and performance metrics. This will help optimize the server and provide insights into how AI models are interacting with blockchain data.
 
 ## License
 
