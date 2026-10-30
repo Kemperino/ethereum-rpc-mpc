@@ -30,6 +30,8 @@ jobs:
         env:
           RELEASE_TAG: ${{ github.event.release.tag_name || inputs.tag }}
         run: node scripts/check-release.mjs
+      - name: Normalize package metadata
+        run: npm pkg fix
       - run: yarn install --frozen-lockfile --non-interactive
       - run: yarn typecheck
       - run: yarn test

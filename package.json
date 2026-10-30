@@ -5,7 +5,7 @@
   "license": "MIT",
   "type": "module",
   "bin": {
-    "ethereum-rpc-mpc": "./dist/server/index.js"
+    "ethereum-rpc-mpc": "dist/server/index.js"
   },
   "files": [
     "dist/**/*",
