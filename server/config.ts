@@ -4,6 +4,7 @@ export interface Config {
   timeoutMs: number;
 }
 
+export const DEFAULT_RPC_URL = "https://ethereum-rpc.publicnode.com";
 export const DEFAULT_TIMEOUT_MS = 30_000;
 
 /** Parse CLI options, with explicit arguments taking precedence over environment defaults. */
@@ -31,7 +32,7 @@ export function parseConfig(args: string[], env: NodeJS.ProcessEnv = process.env
     throw new Error("Use either positional arguments or the corresponding named options.");
   }
 
-  const rpcUrl = options.get("--rpc-url") ?? positional[0] ?? env.ETH_RPC_URL ?? "https://eth.llamarpc.com";
+  const rpcUrl = options.get("--rpc-url") ?? positional[0] ?? env.ETH_RPC_URL ?? DEFAULT_RPC_URL;
   const chainName = options.get("--chain-name") ?? positional[1] ?? env.ETH_CHAIN_NAME ?? "Ethereum";
   const timeoutMs = Number(options.get("--timeout-ms") ?? env.ETH_RPC_TIMEOUT_MS ?? DEFAULT_TIMEOUT_MS);
   validateRpcUrl(rpcUrl);

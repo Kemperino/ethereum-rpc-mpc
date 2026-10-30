@@ -36,9 +36,9 @@ To use this MPC server with Cursor:
 2. Add a new MCP server with the following configuration:
    - Name: Ethereum RPC
    - Type: Command
-   - Command: `npx -y ethereum-rpc-mpc https://eth.llamarpc.com Ethereum`
+   - Command: `npx -y ethereum-rpc-mpc https://ethereum-rpc.publicnode.com Ethereum`
    or
-   - Command: `node /path/to/ethereum-rpc-mpc/dist/server/index.js https://eth.llamarpc.com Ethereum`
+   - Command: `node /path/to/ethereum-rpc-mpc/dist/server/index.js https://ethereum-rpc.publicnode.com Ethereum`
 
 <img width="938" alt="Screenshot 2025-03-13 at 19 41 56" src="https://github.com/user-attachments/assets/f9e09d44-ea43-4ef2-9950-88300f6f9667" />
 
@@ -53,13 +53,13 @@ yarn start [RPC_URL] [CHAIN_NAME]
 npx -y ethereum-rpc-mpc [RPC_URL] [CHAIN_NAME]
 ```
 
-If no RPC URL is provided, it will default to "https://eth.llamarpc.com".
+If no RPC URL is provided, it will default to "https://ethereum-rpc.publicnode.com".
 
 Example:
 
 ```bash
 # Connect to Ethereum mainnet
-yarn start https://eth.llamarpc.com Ethereum
+yarn start https://ethereum-rpc.publicnode.com Ethereum
 ```
 
 ## Examples

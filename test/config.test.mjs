@@ -5,7 +5,7 @@ import packageInfo from "../package.json" with { type: "json" };
 import { parseConfig } from "../dist/server/config.js";
 
 test("supports positional, named and environment configuration", () => {
-  assert.equal(parseConfig([], {}).rpcUrl, "https://eth.llamarpc.com");
+  assert.equal(parseConfig([], {}).rpcUrl, "https://ethereum-rpc.publicnode.com");
   const expected = { rpcUrl: "http://localhost:8545", chainName: "Local", timeoutMs: 500 };
   assert.deepEqual(parseConfig([expected.rpcUrl, "Local", "--timeout-ms", "500"], {}), expected);
   assert.deepEqual(parseConfig(["--chain-name=Local", "--timeout-ms=500", "--rpc-url", expected.rpcUrl], {}), expected);

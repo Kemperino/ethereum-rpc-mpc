@@ -2,7 +2,7 @@
 
 import { serveStdio } from "@modelcontextprotocol/server/stdio";
 import packageInfo from "../package.json" with { type: "json" };
-import { parseConfig } from "./config.js";
+import { DEFAULT_RPC_URL, parseConfig } from "./config.js";
 import { createServer } from "./server.js";
 
 const args = process.argv.slice(2);
@@ -17,7 +17,7 @@ Options:
   --version, -v       Show package version
 
 Environment defaults: ETH_RPC_URL, ETH_CHAIN_NAME, ETH_RPC_TIMEOUT_MS
-Default endpoint: https://eth.llamarpc.com
+Default endpoint: ${DEFAULT_RPC_URL}
 Runs over MCP stdio. The generic RPC tool can execute state-changing methods.`);
 } else if (args.length === 1 && ["--version", "-v"].includes(args[0])) {
   console.log(packageInfo.version);
