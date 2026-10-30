@@ -3,6 +3,7 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from 'zod';
+import { rpcParamsSchema } from "./schemas.js";
 import { callRPC, validateRpcUrl, getChainId } from "./utils.js";
 export let RPC_URL = process.argv[2];
 
@@ -36,7 +37,7 @@ server.tool(
 - params (array, REQUIRED): The parameters for the JSON-RPC method.`,
   {
     method: z.string(),
-    params: z.array(z.string())
+    params: rpcParamsSchema
   },
   async ({ method, params }) => {
     try {

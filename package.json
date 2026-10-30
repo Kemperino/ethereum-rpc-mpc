@@ -13,6 +13,7 @@
   "scripts": {
     "prepublishOnly": "yarn run build",
     "build": "tsc",
+    "test": "yarn run build && node --test test/*.test.mjs",
     "start": "node dist/server/index.js",
     "inspector": "yarn run build && npx @modelcontextprotocol/inspector node dist/server/index.js",
     "dev": "yarn run build && node dist/server/index.js"
