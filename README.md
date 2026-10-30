@@ -15,7 +15,7 @@ Requires **Node.js 22 or newer**. CI covers Node 22, 24 and 26.
 npx -y ethereum-rpc-mpc [RPC_URL] [CHAIN_NAME]
 ```
 
-To use the unreleased changes in this checkout:
+To build and run from source:
 
 ```sh
 git clone https://github.com/Kemperino/ethereum-rpc-mpc.git
@@ -47,7 +47,7 @@ For a client that accepts `mcpServers` configuration, launch the built checkout 
 }
 ```
 
-After publication, use `"command": "npx"` and `"args": ["-y", "ethereum-rpc-mpc"]` to run the npm package instead. Keep private provider URLs in your client's local environment configuration.
+Alternatively, use `"command": "npx"` and `"args": ["-y", "ethereum-rpc-mpc"]` to run the npm package instead. Keep private provider URLs in your client's local environment configuration.
 
 You can also pass positional arguments or named flags:
 
@@ -165,7 +165,7 @@ Builds clear `dist` first so removed features cannot survive in a package as sta
 
 ## Migration and release
 
-See [CHANGELOG.md](CHANGELOG.md). The next release should be a major version because Node requirements and removed features change compatibility:
+See [CHANGELOG.md](CHANGELOG.md). Version 2.0.0 introduces these compatibility changes:
 
 - Node 22+ replaces the previous unspecified runtime requirement.
 - Zircuit-specific tools and automatic chain detection are removed.
@@ -173,7 +173,7 @@ See [CHANGELOG.md](CHANGELOG.md). The next release should be a major version bec
 - `rpc_info` now returns JSON with an endpoint origin instead of the full RPC URL.
 - The default RPC provider is PublicNode. Explicit endpoints and the generic tool name remain supported.
 
-The publish workflow runs on **published stable GitHub releases**, verifies that the tag is exactly `v<package.json version>`, installs the frozen lockfile, type-checks, tests and checks the package before publishing with the existing `NPM_TOKEN` secret. Prereleases are skipped. Before publishing, update the package version and changelog in a separate release commit and confirm that CI and npm credentials are working. No version bump or release is included in this modernization.
+The publish workflow runs on **published stable GitHub releases**, verifies that the tag is exactly `v<package.json version>`, installs the frozen lockfile, type-checks, tests and checks the package before publishing with the existing `NPM_TOKEN` secret. Prereleases are skipped. Before publishing, update the package version and changelog in a separate release commit and confirm that CI and npm credentials are working.
 
 ## References
 
