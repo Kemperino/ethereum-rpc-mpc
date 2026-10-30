@@ -11,13 +11,14 @@
     "dist/**/*"
   ],
   "scripts": {
-    "prepublishOnly": "yarn run build",
-    "build": "tsc",
-    "test": "yarn run build && node --test test/*.test.mjs",
+    "prepublishOnly": "npm test",
+    "build": "node scripts/clean.mjs && tsc",
+    "test": "npm run build && node --test test/*.test.mjs",
     "start": "node dist/server/index.js",
-    "inspector": "yarn run build && npx @modelcontextprotocol/inspector node dist/server/index.js",
-    "dev": "yarn run build && node dist/server/index.js",
-    "check": "tsc --noEmit"
+    "inspector": "npm run build && npx @modelcontextprotocol/inspector node dist/server/index.js",
+    "dev": "npm run build && node dist/server/index.js",
+    "prepack": "npm run build",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@modelcontextprotocol/server": "^2.4.0",
@@ -31,5 +32,21 @@
     "@modelcontextprotocol/client": "^2.4.0",
     "@types/node": "^22.0.0",
     "typescript": "^7.0.2"
-  }
+  },
+  "description": "Ethereum JSON-RPC MCP server with validated read tools, contract simulation and generic RPC access",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kemperino/ethereum-rpc-mpc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kemperino/ethereum-rpc-mpc/issues"
+  },
+  "homepage": "https://github.com/Kemperino/ethereum-rpc-mpc#readme",
+  "keywords": [
+    "ethereum",
+    "evm",
+    "json-rpc",
+    "mcp",
+    "model-context-protocol"
+  ]
 }
