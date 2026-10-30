@@ -12,6 +12,7 @@
 
 ### Added
 
+- A locked Nix development shell with Node.js 24 and Yarn for macOS and Linux.
 - Thirteen discoverable Ethereum read/simulation tools with input validation, block tags and EIP-1898 state references.
 - Named CLI flags and environment-based endpoint, chain-label and timeout configuration.
 - MCP v2 support for legacy clients and the 2026-07-28 protocol.

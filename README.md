@@ -143,6 +143,14 @@ Log topics use positional AND, nested arrays for OR, and `null` as a wildcard. A
 
 ## Development
 
+With Nix installed and `nix-command` and `flakes` enabled, enter a development shell with Node.js 24 (including npm) and Yarn 1.22.22:
+
+```sh
+nix develop
+```
+
+The committed `flake.lock` pins the toolchain for macOS and Linux on Apple Silicon/ARM64 and x86-64. Entering the shell does not install JavaScript dependencies; run the commands below explicitly. To run a command without entering an interactive shell, use `nix develop --command yarn test` after installing dependencies. Update the Nixpkgs pin with `nix flake update nixpkgs`.
+
 ```sh
 yarn install --frozen-lockfile
 yarn typecheck
