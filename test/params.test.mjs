@@ -20,3 +20,9 @@ test("parameters must remain a positional array", () => {
     assert.equal(rpcParamsSchema.safeParse(params).success, false);
   }
 });
+
+test("rejects non-JSON parameter values", () => {
+  for (const value of [undefined, NaN, Infinity, 1n, () => {}]) {
+    assert.equal(rpcParamsSchema.safeParse([value]).success, false);
+  }
+});

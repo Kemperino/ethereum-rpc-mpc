@@ -1,3 +1,3 @@
 import { z } from "zod";
 
-export const rpcParamsSchema = z.array(z.unknown());
+export const rpcParamsSchema = z.array(z.json());
