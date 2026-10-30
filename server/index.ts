@@ -3,7 +3,7 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from 'zod';
-import { callRPC, validateRpcUrl, getChainId, isZircuitChain, addZircuitSLSRPCs } from "./utils.js";
+import { callRPC, validateRpcUrl, getChainId } from "./utils.js";
 import { McpAnalytics } from 'mcp-analytics-middleware';
 export let RPC_URL = process.argv[2];
 
@@ -93,10 +93,6 @@ server.resource(
     };
   }
 );
-
-if(isZircuitChain(chainId)) {
-  addZircuitSLSRPCs(server);
-}
 
 const transport = new StdioServerTransport();
 await server.connect(transport);

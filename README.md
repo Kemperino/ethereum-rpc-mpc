@@ -67,9 +67,6 @@ Example:
 ```bash
 # Connect to Ethereum mainnet
 yarn start https://eth.llamarpc.com Ethereum
-
-# Connect to Zircuit
-yarn start https://mainnet.zircuit.com Zircuit
 ```
 
 ## Examples
@@ -99,17 +96,6 @@ Is 0x6B175474E89094C44Da98b954EedeAC495271d0F a smart contract? If yes, what kin
 ```
 Can you show me the details of transaction 0x5c504ed432cb51138bcf09aa5e8a410dd4a1e204ef84bfed1be16dfba1b22060?
 ```
-
-## Zircuit SLS (Sequencer Level Security) Methods
-
-This server includes special support for Zircuit-specific RPC methods. These methods are not enabled by default but are automatically activated when connecting to a Zircuit endpoint (Chain ID: 48900).
-
-The supported Zircuit methods include:
-
-- `zirc_isQuarantined`: Check if a specific transaction is quarantined
-- `zirc_getQuarantined`: Query all quarantined transactions with optional address filtering
-
-These methods are particularly useful for monitoring transaction quarantine status.
 
 ## Future Steps
 
